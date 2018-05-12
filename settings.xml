@@ -25,7 +25,7 @@
             <properties>
                 <!-- Optional URL to server. Default value is http://localhost:9000 -->
                 <sonar.host.url>
-                  http://dagman62-ubuntu:9000
+                  http://sonarqube:9000
                 </sonar.host.url>
             </properties>
             <build>
