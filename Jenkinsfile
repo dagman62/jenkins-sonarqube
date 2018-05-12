@@ -2,6 +2,7 @@ node {
     def myJenkinsContainer = docker.image('dagman62/jenkins-sonarqube')
     myJenkinsContainer.pull()
 
+    ## put repository here that has your pom.xml file and resources so that maven can pick it up and run it
     stage('prep') {
         git url: 'https://github.com/dagman62/jenkins-sonarqube.git'
     }
