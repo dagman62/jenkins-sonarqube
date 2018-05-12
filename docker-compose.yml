@@ -1,7 +1,8 @@
 version: '3.1'
 services:
   jenkins:
-    image: dagman62/jenkins-docker
+    image: dagman62/jenkins-sonarqube
+    container_name: jenkins
     ports:
       - "8080:8080"
       - "50000:50000"
@@ -12,6 +13,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
   postgres:
     image: postgres
+    container_name: postgres
     networks:
       - jenkins
     environment:
@@ -21,6 +23,7 @@ services:
       - /var/postgres-data:/var/lib/postgresql/data
   sonarqube:
     image: sonarqube
+    container_name: sonarqube
     ports:
       - "9000:9000"
       - "9092:9092"
