@@ -1,11 +1,9 @@
-FROM dagman62/jenkins-docker
+FROM dagman62/jenkins
 USER root
 
 RUN apt-get update && apt-get install -y \
-  maven \
-  gradle \
-  openjdk-8-jdk \
-  && rm -rf /var/lib/apt/lists/*
+  maven && \
+  rm -rf /var/lib/apt/lists/*
 
 USER jenkins
 
