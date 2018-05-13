@@ -1,20 +1,22 @@
 version: '3.1'
 services:
   jenkins:
-    build: .
+    image: dagman62/jenkins:sonarqube
     container_name: jenkins
     ports:
       - "8080:8080"
       - "50000:50000"
     volumes:
-      - /var/jenkins_home:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
+      - jenkins_data:/var/jenkins_home
+      - docker_file:/var/run/docker.sock
   postgres:
     image: postgres
     container_name: postgres
     environment:
       POSTGRES_USER: sonar
       POSTGRES_PASSWORD: sonar
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
   sonarqube:
     image: sonarqube
     container_name: sonarqube
@@ -28,3 +30,7 @@ services:
     depends_on: 
       - postgres
 
+volumes:
+  jenkins_data:
+  docker_file:
+  postgres_data:
