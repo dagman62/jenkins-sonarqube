@@ -25,20 +25,9 @@
             <properties>
                 <!-- Optional URL to server. Default value is http://localhost:9000 -->
                 <sonar.host.url>
-                  http://localhost:9000
+                  http://sonarqube:9000
                 </sonar.host.url>
             </properties>
-            <build>
-              <pluginManagement>
-                <plugins>
-                  <plugin>
-                    <groupId>org.sonarsource.scanner.maven</groupId>
-                    <artifactId>sonar-maven-plugin</artifactId>
-                    <version>3.4.0.905</version>
-                  </plugin>
-                </plugins>
-              </pluginManagement>
-            </build>
         </profile>
      </profiles>
 </settings>
