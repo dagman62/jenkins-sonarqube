@@ -1,12 +1,9 @@
 FROM dagman62/jenkins
 USER root
-
-RUN apt-get update && apt-get install -y \
-  maven && \
-  rm -rf /var/lib/apt/lists/*
-
+RUN apt-get update && apt-get install -y unzip curl
 USER jenkins
-
-RUN mkdir -p /var/jenkins_home/.m2
-
-COPY settings.xml /var/jenkins_home/.m2/settings.xml
+COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
+RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+USER root
+RUN apt-get purge -y --auto-remove curl unzip
+USER jenkins
