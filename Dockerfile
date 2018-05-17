@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
   unzip \
   curl \
   subversion \
+  ant \
   && rm -rf /var/lib/apt/lists/*
 USER jenkins
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
