@@ -2,6 +2,7 @@
 Jenkins running sonarqube, maven, gradle, jdk8, and docker
 ---
 http://localhost:9000
+
 login admin:admin
 ---
 
@@ -13,5 +14,6 @@ Download and install the sonarqube scanner plugin, and create global secret-file
 and use the token generated from sonaqube as the password
 ---
 http://localhost:8080
+
 To get temp password run docker logs -f jenkins
 ---
