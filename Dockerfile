@@ -1,6 +1,6 @@
 FROM dagman62/jenkins
 USER root
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
   groovy \
   maven \
   gradle \
