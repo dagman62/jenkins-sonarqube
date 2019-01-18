@@ -8,11 +8,9 @@ RUN apt-get update && apt-get install -y \
   unzip \
   curl \
   wget \
-  subversion \
   ant \
-  nano \
-  iputils-ping \
   && rm -rf /var/lib/apt/lists/*
+RUN curl -fsSL https://updates.jenkins-ci.org/latest/jenkins.war -o /usr/share/jenkins/jenkins.war
 RUN wget https://packages.chef.io/files/stable/chefdk/3.6.57/ubuntu/18.04/chefdk_3.6.57-1_amd64.deb && \
     dpkg -i chefdk_3.6.57-1_amd64.deb
 COPY hosts /etc/hosts
