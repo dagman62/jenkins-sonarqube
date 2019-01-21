@@ -1,4 +1,4 @@
-FROM dagman62/jenkins
+FROM dagman62/jenkins:docker
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends \
   groovy \
